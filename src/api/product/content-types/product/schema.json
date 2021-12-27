@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "discount": {
+      "type": "decimal",
+      "required": true,
+      "default": 0,
+      "max": 100,
+      "min": 0
+    },
+    "banner_img": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "in_stock": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "is_trending": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "is_top": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "product_info": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
