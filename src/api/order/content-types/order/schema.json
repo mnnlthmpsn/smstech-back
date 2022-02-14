@@ -4,7 +4,8 @@
   "info": {
     "singularName": "order",
     "pluralName": "orders",
-    "displayName": "order"
+    "displayName": "order",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -36,6 +37,11 @@
     },
     "extra_note": {
       "type": "richtext"
+    },
+    "orderItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "prod-item.prod-item"
     }
   }
 }

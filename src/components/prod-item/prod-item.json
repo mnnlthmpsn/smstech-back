@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_prod_item_prod_items",
+  "info": {
+    "displayName": "prod_item",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "quantity": {
+      "type": "decimal",
+      "default": 1,
+      "required": true,
+      "min": 1
+    },
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    }
+  }
+}

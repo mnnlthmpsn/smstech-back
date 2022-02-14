@@ -1,3 +1,5 @@
+const DEFAULT_EMAIL = 'mnnlthmpsn@outlook.com'
+
 module.exports = ({ env }) => ({
     // ...
     upload: {
@@ -14,5 +16,17 @@ module.exports = ({ env }) => ({
         },
       },
     },
+    email: {
+      config: {
+        provider: 'sendgrid',
+        providerOptions: {
+          apiKey: env('SENDGRID_API_KEY')
+        },
+        settings: {
+          defaultFrom: DEFAULT_EMAIL,
+          defaultReplyTo: DEFAULT_EMAIL
+        }
+      }
+    }
     // ...
   });
